@@ -9,11 +9,9 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, gamePlaying, diceNone;
+var scores, roundScore, activePlayer, gamePlaying;
 
 init();
-
-diceNone = document.querySelector('.dice').style.display = 'none';
 
 document.querySelector('.btn-roll').addEventListener("click", function () {
     
@@ -50,11 +48,13 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
         // 3. Check if player won the game
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= 20) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
-            diceNone;
+            document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+            document.querySelector('.btn-roll').style.display = 'none';
+            document.querySelector('.btn-hold').style.display = 'none';
             gamePlaying = false;
         } else {
             // Next Player
@@ -74,7 +74,7 @@ function nextPlayer() {
     document.getElementById('current-1').textContent = '0';
     document.querySelector('.player-0-panel').classList.toggle('active');
     document.querySelector('.player-1-panel').classList.toggle('active');
-    diceNone;
+    document.querySelector('.dice').style.display = 'none';
 }
 
 // Game initialization
@@ -95,4 +95,6 @@ function init() {
     document.querySelector('.player-0-panel').classList.remove('active');
     document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.add('active');
+    document.querySelector('.btn-roll').style.display = 'block';
+    document.querySelector('.btn-hold').style.display = 'block';
 }
