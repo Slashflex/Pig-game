@@ -80,7 +80,7 @@ body {
     margin-bottom: 130px;
 }
 
-.active { background-color: #f7f7f7; }
+.active { background-color: rgba(42, 49, 50, .2); }
 .active .player-name { font-weight: 300; }
 
 .active .player-name::after {
