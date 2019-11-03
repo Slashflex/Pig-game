@@ -24,8 +24,8 @@ Autumn Foliage = #763626
 
 body {
     background-image: linear-gradient(135deg,
-        rgba(42, 49, 50, .9), 
-        rgba(118, 54, 38, .9));
+        rgba(42, 49, 50, .9) 100%, 
+        rgba(51, 107, 135, .5));
     background-size: cover;
     background-position: center;
     font-family: Lato;
