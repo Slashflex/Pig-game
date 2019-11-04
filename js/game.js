@@ -13,7 +13,7 @@ var scores, roundScore, activePlayer, gamePlaying;
 
 init();
 
-document.querySelector('.btn-roll').addEventListener("click", function () {
+document.querySelector('.btn-roll').addEventListener('click', function () {
     
     if (gamePlaying) {
         // 1. Random number
@@ -22,7 +22,7 @@ document.querySelector('.btn-roll').addEventListener("click", function () {
         // 2. Display the result
         var diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
-        diceDOM.src = 'dice-' + dice + '.png';
+        diceDOM.src = 'img/dice-' + dice + '.png';
 
         // 3. Update roundScore IF the rolled dice was not a 1
         if (dice !== 1) {
@@ -31,9 +31,8 @@ document.querySelector('.btn-roll').addEventListener("click", function () {
             roundScore += dice;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
-
             // Next Player
-            nextPlayer();
+            setTimeout(nextPlayer, 800);
         }
     }
 });
@@ -55,13 +54,14 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
             document.querySelector('.btn-roll').style.display = 'none';
             document.querySelector('.btn-hold').style.display = 'none';
+            document.querySelector('.btn-new').classList.add('new-game-btn');
+            document.querySelector('.ion-ios-plus-outline').classList.add('new-game-icon');
             gamePlaying = false;
         } else {
             // Next Player
-            nextPlayer();
+            setTimeout(nextPlayer, 300);
         }
     }
-    
 });
 
 document.querySelector('.btn-new').addEventListener('click', init);
@@ -97,4 +97,7 @@ function init() {
     document.querySelector('.player-0-panel').classList.add('active');
     document.querySelector('.btn-roll').style.display = 'block';
     document.querySelector('.btn-hold').style.display = 'block';
+
+    document.querySelector('.btn-new').classList.remove('new-game-btn');
+    document.querySelector('.ion-ios-plus-outline').classList.remove('new-game-icon');
 }
