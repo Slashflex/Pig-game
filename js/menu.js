@@ -1,20 +1,20 @@
 // When click on menu...
-$('nav').click(function(){
+$('.navigation').click(function(){
     // changes background color 
-    $('.menu').css('background-color','#3d3d44');
+    $('.navigation__menu').css('background-color','#3d3d44');
     // hides Game container + button "rules"
     $('.btn-rules').slideUp(100);
     $('.wrapper').slideUp("slow");
     // and displays dropdown menu
-    $('.dropDown').slideDown("slow");
+    $('.navigation__dropDown').slideDown("slow");
 });
 
 // When mouse leaving menu...
 $('nav').mouseleave(function(){ 
     // changes background color 
-    $('.menu').css('background-color','#2f3131');
+    $('.navigation__menu').css('background-color','#2f3131');
     // hides dropdown menu
-    $('.dropDown').slideUp("slow", function(){
+    $('.navigation__dropDown').slideUp("slow", function(){
         $(this).fadeOut(2000);
     });
     // displays Game container + button "rules"
@@ -29,11 +29,11 @@ $('.btn-rules').click(function(){
     // hides Game container
     $('.wrapper').slideUp("slow");
     // displays game rules popup
-    $('.popup-close').show();
+    $('.popup__close').show();
 });
 
 // On click on popup's cross
-$('.popup-close').click(function(){
+$('.popup__close').click(function(){
     // hides this cross
     $(this).hide();
     // displays Game container + button "rules"
