@@ -1,9 +1,9 @@
 <h1 align="center">Welcome to Pig Game 👋</h1>
 
 <p align="center" markdown="1">
-  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/Slashflex/Natours?style=flat-square">
-  <img alt="Netlify" src="https://img.shields.io/netlify/c9796f02-1af5-4861-9046-bcf804fb4def?style=flat-square">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Slashflex/Natours?style=flat-square">
+  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/Slashflex/Pig-game?style=flat-square">
+  <img alt="Netlify" src="https://img.shields.io/netlify/99e9ec54-e3aa-4d05-b6b2-c3fc6eeb0088?style=flat-square">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Slashflex/Pig-game?style=flat-square">
 </p>
 
 > Landing page for a game created using Native Javascript, JQuery, SASS(scss synthax), 7-1 pattern and BEM methodology. 
@@ -59,7 +59,7 @@ npm run build:css
 * Github: [@Slashflex](https://github.com/Slashflex)
 
 ## Result can be seen here
-
+[Pig Game](https://pig-game-nativejs.netlify.com/)
 ## Show your support
 
 Give a ⭐️ if you liked this project !
