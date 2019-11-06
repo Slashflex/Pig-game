@@ -1,0 +1,90 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, 0.8);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    background-color: rgba($color-black, 0.3);
+
+    &__content {
+        padding: .5rem 1.2rem;
+        @include absLeft;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        box-shadow: 0px .5rem 1rem rgba($color-black, 0.3);
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .5s .2s;
+        background-color: rgba($color-tertiary-dark-3, 0.8);
+        border-radius: 5px;
+
+        @include respond(phone) {
+            width: 90%;
+        }
+    }
+
+    &__item {
+        font-size: 2.2rem;
+        color: $color-white;
+        @include txtCenter;
+        padding: .4rem;
+    }
+    
+    &:target {
+        opacity: 1;
+        visibility: visible; 
+    }
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close {
+
+        &:link,
+        &:visited {
+            color: $color-secondary-dark;
+            position: absolute;
+            top: 0.4rem;
+            right: 1.2rem;
+            font-size: 4rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+    
+        &:hover {
+            transform: rotate(90deg) scale(1.2) translateY(10px) translateX(5px);
+            color: orange;
+            border-bottom: 2px solid $color-white;
+            backface-visibility: hidden;
+        }
+    }
+}
+
+.em-beers {
+    font-size: 2.5rem;
+
+    @include respond(tab-land) {
+        margin-top: .4rem;
+        font-size: 2.5rem;
+    }
+
+    @include respond(phone) {
+        margin-top: .2rem;
+        font-size: 2.5rem;
+    }
+}

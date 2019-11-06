@@ -1,0 +1,108 @@
+.navigation {
+    width: 25rem;
+    margin: 0 auto;
+
+    @include respond(tab-port) { // width < 900px
+        width: 22rem;
+    }
+
+    &__span {
+        width: 2.4rem;
+        height: .4rem;
+        border-radius: 3px;
+        display: block;
+        background: $color-white;
+        margin: .2rem;
+    }
+
+    &__menu {
+        background-color: $color-gray-dark-2;
+        color: $color-white;
+        display: block;
+        position: relative;
+        font-size: 2rem;
+        padding: 2rem;
+        transform: transition 300ms ease;
+        border-bottom: 3px solid $color-gray-dark-4;
+        border-radius: 0 0 1.4rem 1.4rem;
+        box-shadow: 0px .5rem 1rem rgba($color-black, 0.3);
+
+        &:hover &__dropdownIcon &__span {
+            box-shadow: 0px .3rem .5rem 0px rgba($color-gray-dark-2, 0.3);
+        }
+    }
+
+    &__dropdownIcon {
+        display: block;
+        width: 2.4rem;
+        margin-top: .2rem;
+        right: 0;
+        float: right;
+    }
+
+    &:hover &__menu {
+        cursor: pointer;
+        background: $color-gray-dark-2;
+    }
+
+    &__dropDown {
+        background: $color-primary;
+        border-radius: 1rem;
+        @include txtCenter;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        margin-top: 2rem;
+        display: none;
+        box-shadow: $shadow-black;
+    
+        &:before {
+            content: "";
+            position: absolute;
+            border: 1.5rem solid $color-primary;
+            border-top: 0 solid transparent !important;
+            border-right: 1.5rem solid transparent !important;
+            border-left: 1.5rem solid transparent !important;
+            right: 1.6rem;
+            top: -1.5rem;
+        }
+    }
+
+    &__link {
+        color: $color-white;
+        text-decoration: none;
+        display: block;
+        padding: 1rem 0;
+        font-weight: 700;
+        font-size: 1.6rem;
+
+        &--emoji { 
+            font-size: 1.5rem; 
+            margin: .2rem .2rem; 
+        } 
+        
+        &--emoji-dice {
+            width: 10%;
+            margin: -9% 0 -2% 5%; 
+        }
+
+        &:last-child {
+            margin-left: 5%;
+        }
+
+        &:hover {
+            color: $color-bright-gold;
+            text-decoration: none;
+            display: block;
+            padding: 1rem 0;
+            font-weight: 700;
+            font-size: 1.6rem;
+        }
+
+        &--icon {
+            color: $color-white;
+            font-weight: bold;
+        }
+    }
+}
+
