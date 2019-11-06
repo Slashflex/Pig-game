@@ -13,7 +13,7 @@ var scores, roundScore, activePlayer, gamePlaying;
 
 init();
 
-document.querySelector('.btn-roll').addEventListener('click', function () {
+document.querySelector('.btn__roll').addEventListener('click', function () {
     
     if (gamePlaying) {
         // 1. Random number
@@ -26,7 +26,6 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 
         // 3. Update roundScore IF the rolled dice was not a 1
         if (dice !== 1) {
-
             // Add score
             roundScore += dice;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
@@ -37,7 +36,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
     }
 });
 
-document.querySelector('.btn-hold').addEventListener('click', function () {
+document.querySelector('.btn__hold').addEventListener('click', function () {
 
     if (gamePlaying) { 
         // 1. Add current score to Global score
@@ -50,21 +49,19 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         if (scores[activePlayer] >= 100) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
-            document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-            document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-            document.querySelector('.btn-roll').style.display = 'none';
-            document.querySelector('.btn-hold').style.display = 'none';
-            document.querySelector('.btn-new').classList.add('new-game-btn');
-            document.querySelector('.ion-ios-plus-outline').classList.add('new-game-icon');
+            document.querySelector('.wrapper__player-' + activePlayer + '-panel').classList.add('winner');
+            document.querySelector('.wrapper__player-' + activePlayer + '-panel').classList.remove('wrapper__active');
+            document.querySelector('.btn__roll').style.display = 'none';
+            document.querySelector('.btn__hold').style.display = 'none';
             gamePlaying = false;
         } else {
             // Next Player
-            setTimeout(nextPlayer, 300);
+            setTimeout(nextPlayer, 200);
         }
     }
 });
 
-document.querySelector('.btn-new').addEventListener('click', init);
+document.querySelector('.btn__new').addEventListener('click', init);
 
 // Next player's turn
 function nextPlayer() {
@@ -72,8 +69,8 @@ function nextPlayer() {
     roundScore = 0;
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
-    document.querySelector('.player-0-panel').classList.toggle('active');
-    document.querySelector('.player-1-panel').classList.toggle('active');
+    document.querySelector('.wrapper__player-0-panel').classList.toggle('wrapper__active');
+    document.querySelector('.wrapper__player-1-panel').classList.toggle('wrapper__active');
     document.querySelector('.dice').style.display = 'none';
 }
 
@@ -90,14 +87,11 @@ function init() {
     document.getElementById('current-1').textContent = '0';
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2';
-    document.querySelector('.player-0-panel').classList.remove('winner');
-    document.querySelector('.player-1-panel').classList.remove('winner');
-    document.querySelector('.player-0-panel').classList.remove('active');
-    document.querySelector('.player-1-panel').classList.remove('active');
-    document.querySelector('.player-0-panel').classList.add('active');
-    document.querySelector('.btn-roll').style.display = 'block';
-    document.querySelector('.btn-hold').style.display = 'block';
-
-    document.querySelector('.btn-new').classList.remove('new-game-btn');
-    document.querySelector('.ion-ios-plus-outline').classList.remove('new-game-icon');
+    document.querySelector('.wrapper__player-0-panel').classList.remove('winner');
+    document.querySelector('.wrapper__player-1-panel').classList.remove('winner');
+    document.querySelector('.wrapper__player-0-panel').classList.remove('wrapper__active');
+    document.querySelector('.wrapper__player-1-panel').classList.remove('wrapper__active');
+    document.querySelector('.wrapper__player-0-panel').classList.add('wrapper__active');
+    document.querySelector('.btn__roll').style.display = 'block';
+    document.querySelector('.btn__hold').style.display = 'block';
 }
