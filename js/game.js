@@ -31,7 +31,7 @@ document.querySelector('.btn__roll').addEventListener('click', function () {
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
             // Next Player
-            setTimeout(nextPlayer, 200);
+            setTimeout(nextPlayer, 800);
         }
     }
 });
@@ -61,8 +61,6 @@ document.querySelector('.btn__hold').addEventListener('click', function () {
     }
 });
 
-document.querySelector('.btn__new').addEventListener('click', init);
-
 // Next player's turn
 function nextPlayer() {
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -73,6 +71,8 @@ function nextPlayer() {
     document.querySelector('.wrapper__player-1-panel').classList.toggle('wrapper__active');
     document.querySelector('.dice').style.display = 'none';
 }
+
+document.querySelector('.btn__new').addEventListener('click', init);
 
 // Game initialization
 function init() {
