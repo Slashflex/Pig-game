@@ -23,7 +23,7 @@ document.querySelector('.btn__roll').addEventListener('click', function () {
         var diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
         diceDOM.src = 'img/dice-' + dice + '.png';
-        
+
         // 3. Update roundScore IF the rolled dice was not a 1
         if (dice !== 1) {
             // Add score
@@ -45,8 +45,19 @@ document.querySelector('.btn__hold').addEventListener('click', function () {
         // 2. Update the UI
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
+        var input = document.querySelector('.final-score').value;
+        var winningScore;
+        
+        // Undefined, 0, null or "" are COERCED to false
+        // Anything else is COERCED to true
+        if(input) {
+            winningScore = input;
+        } else {
+            winningScore = 100;
+        }
+
         // 3. Check if player won the game
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= winningScore) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.wrapper__player-' + activePlayer + '-panel').classList.add('winner');
