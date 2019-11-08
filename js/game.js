@@ -31,7 +31,9 @@ document.querySelector('.btn__roll').addEventListener('click', function () {
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
             // Next Player
-            setTimeout(nextPlayer, 800);
+            nextPlayer;
+            // setTimeout(nextPlayer, 800);
+
         }
     }
 });
