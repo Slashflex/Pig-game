@@ -6,7 +6,7 @@ GAME RULES:
 - BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
 - The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
 - The first player to reach 100 points on GLOBAL score wins the game
-
+- You can now specify your own winning score, if not set, 100 will be set by default.
 */
 
 var scores, roundScore, activePlayer, gamePlaying;
@@ -62,8 +62,7 @@ document.querySelector('.btn__hold').addEventListener('click', function () {
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.wrapper__player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.wrapper__player-' + activePlayer + '-panel').classList.remove('wrapper__active');
-            document.querySelector('.btn__roll').style.display = 'none';
-            document.querySelector('.btn__hold').style.display = 'none';
+            displayOrNot(winningScore);
             gamePlaying = false;
         } else {
             // Next Player
@@ -71,6 +70,20 @@ document.querySelector('.btn__hold').addEventListener('click', function () {
         }
     }
 });
+
+function displayOrNot(winningScore) {
+    if (scores[activePlayer] >= winningScore) {
+        document.querySelector('.btn__roll').style.display = 'none';
+        document.querySelector('.btn__hold').style.display = 'none';
+        document.querySelector('.final-score').style.display = 'none';
+        document.querySelector('.form__label').style.display = 'none';
+    } else {
+        document.querySelector('.btn__roll').style.display = 'block';
+        document.querySelector('.btn__hold').style.display = 'block';
+        document.querySelector('.final-score').style.display = 'block';
+        document.querySelector('.form__label').style.display = 'block';
+    }
+}
 
 // Next player's turn
 function nextPlayer() {
