@@ -533,7 +533,7 @@ body {
       margin: 2rem 10rem; } }
 
 .btn__new {
-  top: 4.5rem;
+  top: 2.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.616); }
 
 .btn__roll {
@@ -674,6 +674,64 @@ button {
     .em-beers {
       margin-top: .2rem;
       font-size: 2.5rem; } }
+
+.final-score {
+  position: absolute;
+  left: 40%;
+  top: 33rem;
+  color: #000;
+  padding: 1rem 1rem .6rem 1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: .5rem;
+  text-align: center;
+  background-color: transparent;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.3);
+  font-family: Lato;
+  font-size: 2rem;
+  text-transform: uppercase;
+  width: 20%; }
+  @media (max-width: 75em) {
+    .final-score {
+      left: 40%; } }
+  @media (max-width: 42.5em) and (min-width: 30em) {
+    .final-score {
+      font-size: 1.5rem; } }
+  @media (max-width: 30em) {
+    .final-score {
+      font-size: 1.5rem; } }
+
+.final-score:focus {
+  outline: none; }
+
+.form__label {
+  position: absolute;
+  left: 41%;
+  top: 33rem;
+  font-family: Lato;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-left: 1.8rem;
+  margin-top: -3.5rem;
+  display: block;
+  color: #777;
+  transition: all .3s; }
+  @media (max-width: 75em) {
+    .form__label {
+      left: 39%; } }
+  @media (max-width: 42.5em) and (min-width: 30em) {
+    .form__label {
+      left: 38%;
+      font-size: 1.8rem; } }
+  @media (max-width: 30em) {
+    .form__label {
+      left: 38%;
+      font-size: 1.8rem; } }
+
+.final-score:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4rem); }
 
 .row {
   max-width: 114rem;
@@ -902,7 +960,7 @@ button {
 .dice {
   position: absolute;
   left: 50%;
-  top: 17.8rem;
+  top: 14.8rem;
   transform: translateX(-50%);
   height: 11rem;
   box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.3);
