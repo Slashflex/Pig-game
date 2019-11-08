@@ -58,7 +58,8 @@ document.querySelector('.btn__hold').addEventListener('click', function () {
             gamePlaying = false;
         } else {
             // Next Player
-            setTimeout(nextPlayer, 200);
+            nextPlayer;
+            //setTimeout(nextPlayer, 200);
         }
     }
 });
