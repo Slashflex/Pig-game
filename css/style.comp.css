@@ -246,6 +246,12 @@ button {
   font-size: 2rem;
   text-transform: uppercase;
   width: 20%; }
+  .final-score:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #336b87; }
+  .final-score:focus:invalid {
+    border-bottom: 3px solid #ffb900; }
   @media (max-width: 75em) {
     .final-score {
       left: 40%; } }
@@ -255,9 +261,6 @@ button {
   @media (max-width: 30em) {
     .final-score {
       font-size: 1.5rem; } }
-
-.final-score:focus {
-  outline: none; }
 
 .form__label {
   position: absolute;
@@ -358,7 +361,7 @@ button {
     position: relative;
     margin-top: 2rem;
     display: none;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.616); }
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.3); }
     .navigation__dropDown:before {
       content: "";
       position: absolute;
