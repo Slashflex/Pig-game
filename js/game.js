@@ -31,9 +31,7 @@ document.querySelector('.btn__roll').addEventListener('click', function () {
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
             // Next Player
-            nextPlayer;
-            // setTimeout(nextPlayer, 800);
-
+            setTimeout(nextPlayer, 800);
         }
     }
 });
@@ -58,8 +56,7 @@ document.querySelector('.btn__hold').addEventListener('click', function () {
             gamePlaying = false;
         } else {
             // Next Player
-            nextPlayer;
-            //setTimeout(nextPlayer, 200);
+            setTimeout(nextPlayer, 200);
         }
     }
 });
