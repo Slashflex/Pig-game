@@ -6,7 +6,7 @@
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Slashflex/Pig-game?style=flat-square">
 </p>
 
-> Landing page for a game created using Native Javascript, JQuery, SASS(scss synthax), 7-1 pattern and BEM methodology. 
+> Game created using Native Javascript, JQuery, SASS(scss synthax), 7-1 pattern and BEM methodology. 
 
 ### GAME RULES:
 
